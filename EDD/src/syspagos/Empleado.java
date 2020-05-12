@@ -1,6 +1,6 @@
 package syspagos;
 
-import excepciones.CargoException;
+import excepciones.CargoException; 
 import excepciones.MesesTrabajoException;
 import excepciones.NombreEmpleadoException;
 import excepciones.NumeroEmpleadoException;
@@ -74,7 +74,7 @@ public class Empleado {
         if (mesesT.matches("^\\d+$")){
             n= Integer.parseInt(mesesT);
             if (n>=000 && n < 1000 ){
-                setNumeroEmpleado(n);
+                setMesesTrabajo(n);
                 return;
             }
         }
@@ -86,8 +86,10 @@ public class Empleado {
         if (directivo.length()==1){
             if (caracter[0] == '+' ){
                 setDirectivo(true);
+                return;
             }else if(caracter[0]=='-'){
                 setDirectivo(false);
+                return;
             }
         }
         throw new CargoException();
